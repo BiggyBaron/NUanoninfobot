@@ -1,0 +1,13 @@
+version: "3"
+services:
+  tlg_bot:
+    restart: always
+    build: ./app
+    command: python3 -u ./main.py
+    volumes:
+      - .:/cleverest_machine
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "10"
